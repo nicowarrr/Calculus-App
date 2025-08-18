@@ -1,0 +1,300 @@
+/* Contenedor principal del registro */
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+  padding-top: 72px; /* Suficiente para desktop y tablets */
+  box-sizing: border-box;
+}
+
+/* Responsive: más padding en móvil por el header expandido */
+@media (max-width: 991.98px) {
+  .register-wrapper {
+    padding-top: 88px; /* Tablets y móviles grandes */
+  }
+}
+
+@media (max-width: 480px) {
+  .register-wrapper {
+    padding-top: 96px; /* Móviles pequeños, menú hamburguesa abierto */
+  }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Contenedor del formulario */
+.register-form {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Contenedor del logo */
+.logo-container {
+  margin-bottom: 1.5rem;
+}
+
+/* Logo */
+.register-logo {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Título */
+.register-title {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Fila de formulario (para campos en dos columnas) */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grupos de formulario */
+.form-group {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.form-group.half-width {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Inputs y select */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 0.75rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background: #fff;
+  min-height: 48px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Select específico */
+.form-group select {
+  cursor: pointer;
+  color: #333;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.5rem;
+}
+
+.form-group select option {
+  color: #333;
+  padding: 0.5rem;
+}
+
+/* Input inválido */
+.form-group input.invalid {
+  border-color: #e53e3e;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+/* Error de campo específico */
+.field-error {
+  color: #c53030;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+/* Contenedor de input de contraseña */
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-container input {
+  padding-right: 3rem;
+}
+
+/* Botón toggle de contraseña */
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover {
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Mensaje de error */
+.error-message {
+  background: #fee;
+  color: #c53030;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #fed7d7;
+  text-align: left;
+}
+
+/* Botón de registro */
+.register-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  min-height: 48px;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+@media screen and (max-height: 776px) and (min-width: 1000px) {
+  .register-wrapper {
+    padding-top: 140px; /* Reduce el espacio arriba */
+    min-height: 0; /* Permite que el registro no quede centrado a la fuerza */
+    align-items: flex-start; /* El form se pega arriba, no al centro vertical */
+    justify-content: center;
+  }
+  .register-form {
+    margin-top: 0;
+    padding: 1rem 1.5rem;
+    max-width: 700px;
+    border-radius: 12px;
+  }
+  .logo-container {
+    margin-bottom: 0.25rem;
+  }
+  .register-logo {
+    width: 60px;
+  }
+  .register-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .form-group.half-width {
+    margin-bottom: 0.5rem;
+  }
+  .form-row {
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .form-group label {
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
+  .form-group input,
+  .form-group select {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    min-height: 40px;
+    border-radius: 6px;
+  }
+  .register-button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    min-height: 40px;
+    margin-top: 0.25rem;
+  }
+  .error-message {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .field-error {
+    font-size: 0.7rem;
+    margin-top: 0.15rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-group.half-width {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

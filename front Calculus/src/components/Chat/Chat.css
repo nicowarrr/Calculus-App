@@ -1,0 +1,171 @@
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.card-header {
+  padding: 0.8rem 1rem;
+  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #0b5ed7;
+}
+
+.chat-container {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  max-height: 640px; /* Limita la altura del área de mensajes */
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Message styles */
+.message {
+  max-width: 80%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* User message */
+.user-message {
+  align-self: flex-end;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-bottom-right-radius: 4px;
+}
+
+/* Bot message */
+.bot-message {
+  align-self: flex-start;
+  background-color: #e2e3e5;
+  color: #41464b;
+  border-bottom-left-radius: 4px;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Message icons */
+.message-header i {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+/* Message content */
+.bubble {
+  margin-left: 1.6rem;
+  min-height: 2.4em;
+  font-size: 14px;
+}
+
+.card-footer {
+  padding: 0.8rem;
+  border-top: 1px solid #dee2e6;
+  background-color: #fff;
+}
+
+/* Input form */
+form.d-flex {
+  display: flex;
+  gap: 8px;
+}
+
+form.d-flex input {
+  flex: 1;
+  font-size: 14px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #ced4da;
+  transition: all 0.2s ease;
+}
+
+form.d-flex input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+form.d-flex button {
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+form.d-flex button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+/* Loading animation */
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+}
+
+/* Error message */
+.text-danger {
+  font-size: 13px;
+  margin-top: 0.5rem;
+}
+
+.mathlive-input .ML__mathfield,
+.custom-mathfield {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  background: white;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 60px;
+  overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+  .chat-wrapper {
+    height: 70vh;
+    min-height: 350px;
+    width: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .chat-container {
+    flex: 1;
+    max-height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+  }
+  .chat-messages {
+    max-height: none;
+    height: auto;
+  }
+}

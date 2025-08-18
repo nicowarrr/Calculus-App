@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Forzar la barra de desplazamiento vertical siempre visible */
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: clip; /* Forzar barra vertical siempre */
+  scrollbar-width: thin; /* Para Firefox */
+}
+
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  max-width: 100vw;
+  position: relative;
+  /* Compensación para evitar saltos cuando aparece/desaparece la barra de desplazamiento */
+  padding-right: calc(100vw - 100%);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f5f7fa;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  color: #ffffff;
+  padding: 0.5rem 0;
+  font-weight: bold;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  overflow: hidden;
+  min-height: 0;
+  max-width: 100vw; /* 👈 Asegura que no se pase del ancho de la ventana */
+  box-sizing: border-box; /* 👈 Importante para respetar paddings */
+}
+
+.exercise-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.exercise-header {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.exercise-header h2 {
+  margin: 0 0 1rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #212529;
+}
+
+.collab-bar-container {
+  margin-top: 0.2rem;
+}
+
+.collab-bar-container h5 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.progress {
+  height: 22px;
+  border-radius: 10px;
+  background-color: #e9ecef;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 22px;
+  border-radius: 10px;
+}
+
+.exercise-content {
+  flex: 1;
+  text-align: justify;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.chat-panel {
+  flex: 1.5;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.footer {
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .content-container {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 0;
+    gap: 0;
+    overflow: visible;
+  }
+
+  .exercise-panel {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    max-height: none;
+    overflow: visible;
+    flex: none;
+  }
+
+  .chat-panel {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin: 1rem 0 0 0;
+    padding: 0.5rem;
+    max-height: none;
+    overflow: visible;
+    flex: none;
+    display: block;
+  }
+
+  .exercise-content {
+    padding: 0.5rem;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 370px) {
+  .header {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .brand-logo {
+    height: 22px !important;
+    max-width: 32px !important;
+  }
+  .navbar-brand {
+    font-size: 1.05rem !important;
+    padding: 0.2rem 0 !important;
+  }
+  .brand-text {
+    font-size: 1.05rem !important;
+  }
+  .user-chip {
+    font-size: 1rem !important;
+  }
+  .nickname-badge {
+    font-size: 0.95rem !important;
+    padding: 0.3rem 0.8rem !important;
+  }
+}
+
+body,
+#root {
+  overflow-y: auto;
+}
+
+.app-container {
+  overflow: visible;
+}
+
+.exercise-panel,
+.chat-panel {
+  overflow: visible;
+}
+
+/* Exercise container styles */
+.exercise-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.exercise-container p {
+  margin-bottom: 1.5rem;
+  font-size: 0.5rem;
+}
+
+.exercise-container .btn {
+  margin: 0.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+.user-chip {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.nickname-badge {
+  background-color: #0d6efd; /* Azul Bootstrap */
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 30px;
+}
+
+/* Forzar la barra de desplazamiento vertical siempre visible */

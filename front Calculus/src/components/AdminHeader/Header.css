@@ -1,0 +1,82 @@
+/* Header principal simple */
+.header {
+  width: 100%;
+  background: #3b82f6; /* Azul simple */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding-top: 0.60rem;    /* antes 0.2rem */
+  padding-bottom: 0.60rem; /* antes 0.2rem */
+}
+
+/* Estilo básico del logo */
+.navbar-brand {
+  font-size: 1.35rem; /* antes 1.2rem */
+  color: #ffffff;
+  padding: 0.4rem 0; /* antes 0.2rem 0 */
+  font-weight: bold;
+}
+
+/* Texto de marca */
+.brand-text {
+  color: #ffffff;
+}
+
+/* Enlaces de navegación simples */
+.nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  margin: 0 0.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botón de admin simple */
+.admin-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+}
+
+.admin-button:hover {
+  background-color: #dc2626;
+}
+
+/* Botón hamburguesa */
+.custom-toggler {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+}
+
+.custom-toggler span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+  margin: 4px 0;
+}
+.brand-logo {
+  height: 45px; /* antes 26px */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #3b82f6;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-link {
+    display: block;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+}
